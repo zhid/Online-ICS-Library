@@ -1,6 +1,7 @@
 body
 {
 	background-image: url('../images/body_background.jpg');
+	background-color:black;
 }
 
 #navigationBox
@@ -68,7 +69,7 @@ ul#navigation li a
 {
 	background-color: rgba(255, 255, 255, 0.2);
 	width:900px;
-	height:570px;
+	height:900px;
 	margin:10px auto 0 auto;
 	border-radius:10px;
 	box-shadow: 0px 0px 10px black inset, 0px 0px 10px black;
@@ -77,7 +78,6 @@ ul#navigation li a
 #container select, #container input[type="email"],#container input[type="text"], #container input[type="password"]
 {
 	font-size: 17px;
-	width: 220px;
 }
 
 #container label
@@ -98,36 +98,28 @@ ul#navigation li a
 	text-align: center;
 }
 
-#registration_comment
-{
-	text-align: center;
-	color: white;
-	font-size: 20px;
-	width: 900px;
-	height: 30px;
-}
-
 #form_container
 {
 	float: left;
-	margin-left: 20px;
-	width:650px;
-	height:500px;
+	margin-left: 40px;
+	width:630px;
+	height:730px;
 }
 
-.comment
+#form_container label
 {
-	font-size: 14px;
+	font-size: 20px;
 	color: white;
 }
 
-#rightOfForm
+#form_container input[type="text"], #form_container select, #form_container input[type="date"], #form_container input[type="number"]
 {
-	padding-left: 40px;
-	padding-top: 40px;
-	float: left;
-	width:180px;
-	height:460px;
+	width: 350px;
+}
+
+#form_container table
+{
+	width: 600px;
 }
 
 #footer

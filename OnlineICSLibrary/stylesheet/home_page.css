@@ -66,7 +66,7 @@ ul#navigation li a
 
 #container 
 {
-	background-color: #a64848;
+	background-color: rgba(255, 255, 255, 0.4);
 	width:900px;
 	height:300px;
 	margin-top: 20px;
@@ -176,7 +176,7 @@ ul#navigation li a
 
 #catalog
 {
-	background-color: #f0b72b;
+	background-color: rgba(240, 183, 43, 0.5);
 	box-shadow: 0 0 7px 0px #000 inset, 0 0 16px 0px #000;
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;
@@ -209,18 +209,63 @@ ul#navigation li a
 
 #login_comment
 {
+	font-size: 15px;
 	text-align: center;
+	padding-top: 0px;
 	float: left;
+	font-weight: bold;
 	height: 20px;
 	width: 300px;
+}
+
+#accountbox_form
+{
+	float: left;
+	height: 100px;
+	width: 300px;
+}
+
+#accountbox_form select
+{
+	margin-left: 3px;
+	width: 175px;
+	height: 25px;
+}
+
+#submit_button input[type="submit"]
+{
+	width: 70px;
+	height: 80px;
 }
 
 #account_box
 {
 	float: left;
-	padding-left: 10px;
 	height: 100px;
-	width: 280px;
+	width: 300px;
+}
+
+#form_input
+{
+	float: left;
+	margin-left: 10px;
+	width: 210px;
+	height: 100px;
+}
+
+#submit_button
+{
+	float: left;
+	width: 70px;
+	height: 100px;
+}
+
+#not_member
+{
+	padding: 10px;
+	float: left;
+	height: 20px;
+	width: 290px;
 }
 
 #account_box span
@@ -245,36 +290,78 @@ input, select
 	margin-top: 5px;
 }
 
-#accountbox_form
+#user_account
 {
+	
 	float: left;
-	height: 100px;
-	width: 210px;
+	width: 300px;
+	height: 200px;
 }
 
-#accountbox_form select
+.img_link_container
 {
-	width: 175px;
-	height: 25px;
+	
+	margin-left: 20px;
+	float: left;
+	width: 250px;
+	height: 40px;
 }
 
-#submit_button
+.img
 {
 	float: left;
-	float: left;
-	width: 70px;
-	height: 100px;
+	width: 50px;
+	height: 40px;
 }
 
-#submit_button input[type="submit"]
+.link
 {
-	width: 70px;
-	height: 80px;
+	padding-top: 10px;
+	float: left;
+	width: 200px;
+	height: 40px;
+}
+
+.link a
+{
+	text-decoration: none;
+	font-size: 15px;
+}
+
+/*for the librarian*/
+.lib_img_link_container
+{
+	margin-left: 20px;
+	float: left;
+	width: 250px;
+	height: 30px;
+	margin-bottom: 5px;
+}
+
+.lib_img
+{
+	float: left;
+	width: 30px;
+	height: 30px;
+}
+
+.lib_link
+{
+	padding-left: 5px;
+	float: left;
+	width: 195px;
+	height: 30px;
+}
+
+.lib_link a
+{
+	text-decoration: none;
+	font-size: 13px;
 }
 
 #news
 {
-	background-color: #f1eee7;
+	background-color: rgba(241, 238, 231, 0.3);
 	box-shadow: 0 0 7px 0px #000 inset, 0 0 16px 0px #000;
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;
@@ -286,9 +373,33 @@ input, select
 	float:left;
 }
 
+#news_title
+{
+	float: left;
+	width: 280px;
+	height: 20px;
+	font-size: 20px;
+	color: white;
+	padding-top: 10px;
+	text-align: center;
+}
+
+#news_content
+{
+	float: left;
+	width: 240px;
+	height: 230px;
+	font-size: 15px;
+	color: white;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+	text-align: justify;
+}
+
 #notice
 {
-	background-color: #f1eee7;
+	background-color: rgba(241, 238, 231, 0.3);
 	box-shadow: 0 0 7px 0px #000 inset, 0 0 16px 0px #000;
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;
@@ -298,6 +409,30 @@ input, select
 	height:280px;
 	margin-left:20px;
 	float:left;
+}
+
+#notice_title
+{
+	float: left;
+	width: 280px;
+	height: 20px;
+	font-size: 20px;
+	color: white;
+	padding-top: 10px;
+	text-align: center;
+}
+
+#notice_content
+{
+	float: left;
+	width: 240px;
+	height: 230px;
+	font-size: 15px;
+	color: white;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+	text-align: justify;
 }
 
 #SecondContainer
@@ -311,7 +446,7 @@ input, select
 
 #calendar
 {
-	background-color: #948f8e;
+	background-color: rgba(148, 143, 142, 0.3);
 	box-shadow: 0 0 7px 0px #000 inset, 0 0 16px 0px #000;
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;
@@ -322,9 +457,32 @@ input, select
 	float:left;
 }
 
+#calendar_title
+{
+	width: 440px;
+	height: 20px;
+	float: left;
+	padding-top: 10px;
+	color: white;
+	text-align: center;
+}
+
+#calendar_content
+{
+	float: left;
+	width: 400px;
+	height: 230px;
+	font-size: 15px;
+	color: white;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+	text-align: justify;
+}
+
 #latest
 {
-	background-color: #948f8e;
+	background-color: rgba(148, 143, 142, 0.3);
 	box-shadow: 0 0 7px 0px #000 inset, 0 0 16px 0px #000;
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;
@@ -334,6 +492,29 @@ input, select
 	height:280px;
 	margin-left:20px;
 	float:left;
+}
+
+#latest_title
+{
+	width: 440px;
+	height: 20px;
+	float: left;
+	padding-top: 10px;
+	color: white;
+	text-align: center;
+}
+
+#latest_content
+{
+	float: left;
+	width: 400px;
+	height: 230px;
+	font-size: 15px;
+	color: white;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+	text-align: justify;
 }
 
 #footerNavigationBox
