@@ -15,16 +15,6 @@
 		
 		public function addTheBook()
 		{
-			$this->load->helper('url');
-		
-			$config['upload_path'] = 'bookimages/';
-			$config['file_name'] = $this->input->post('book_title');
-			$config['remove_spaces'] = FALSE;
-			$config['allowed_types'] = 'gif|jpg|png|jpeg';
-			$config['max_size']    = '3000';
-			$config['max_width']  = '3000';
-			$config['max_height']  = '3000';
-			
 			$title = $this->input->post('book_title');
 			$author = $this->input->post('book_author');
 			$subject = $this->input->post('book_subject');
@@ -39,15 +29,11 @@
 			$publisher = $this->input->post('book_publisher');
 			$description = $this->input->post('book_description');
 			$numberofpages = $this->input->post('book_pages');
-			
-			//loads the necessary libraries
-			$this->load->database();
-			$this->load->library('upload', $config);
-			
-			$sql = "SELECT AccountNumber, CallNumber FROM book WHERE AccountNumber='".$accountnumber."' OR CallNumber='".$callnumber."'";
-			$query1 = $this->db->query($sql);
 				
-			if(!$this->upload->do_upload() || $query1->num_rows() != 0)
+			$this->load->model('addMaterial/addmaterial_model');
+			$response = $this->addmaterial_model->addBook($title, $author, $subject, $status, $type, $accountnumber, $callnumber, $publicationdate, $numberofcopies, $isbn, $edition, $publisher, $description, $numberofpages); 
+		
+			if($response == 0)
 			{
 				$this->isSuccessful = 0;
 				$data['isSuccessful'] = $this->isSuccessful;
@@ -55,11 +41,6 @@
 			}
 			else
 			{
-				$query = "INSERT INTO book(Title,Author,Subject,Status,Type,AccountNumber,CallNumber,PublicationDate,NumberOfCopies,ISBN,Edition,Publisher,Description,NumberOfPages) VALUES ('$title','$author','$subject','$status','$type','$accountnumber','$callnumber','$publicationdate','$numberofcopies','$isbn','$edition','$publisher','$description','$numberofpages')";
-					
-				$data = array('upload_data' => $this->upload->data());
-				
-				$this->db->query($query);
 				$this->isSuccessful = 1;
 				$data['isSuccessful'] = $this->isSuccessful;
 				$this->load->view('addedPage/added_page', $data);
@@ -68,16 +49,6 @@
 		
 		public function addTheThesis()
 		{
-			$this->load->helper('url');
-		
-			$config['upload_path'] = 'thesisimages/';
-			$config['file_name'] = $this->input->post('thesis_title');
-			$config['remove_spaces'] = FALSE;
-			$config['allowed_types'] = 'gif|jpg|png|jpeg';
-			$config['max_size']    = '3000';
-			$config['max_width']  = '3000';
-			$config['max_height']  = '3000';
-			
 			$title = $this->input->post('thesis_title');
 			$author = $this->input->post('thesis_author');
 			$subject = $this->input->post('thesis_subject');
@@ -89,14 +60,11 @@
 			$numberofcopies = $this->input->post('thesis_number_of_copies');
 			$thesisadviser = $this->input->post('thesis_adviser');
 			
-			//loads the necessary libraries
-			$this->load->database();
-			$this->load->library('upload', $config);
 			
-			$sql = "SELECT AccountNumber, CallNumber FROM thesis WHERE AccountNumber='".$accountnumber."' OR CallNumber='".$callnumber."'";
-			$query1 = $this->db->query($sql);
-				
-			if(!$this->upload->do_upload() || $query1->num_rows() != 0)
+			$this->load->model('addMaterial/addmaterial_model');	
+			$response = $this->addmaterial_model->addThesis($title, $author, $subject, $status, $type, $accountnumber, $callnumber, $publicationdate, $numberofcopies, $thesisadviser);
+			
+			if($response == 0)
 			{
 				$this->isSuccessful = 0;
 				$data['isSuccessful'] = $this->isSuccessful;
@@ -104,11 +72,6 @@
 			}
 			else
 			{
-				$query = "INSERT INTO thesis(Title,Author,Subject,Status,Type,AccountNumber,CallNumber,PublicationDate,NumberOfCopies,ThesisAdviser) VALUES ('$title','$author','$subject','$status','$type','$accountnumber','$callnumber','$publicationdate','$numberofcopies','$thesisadviser')";
-					
-				$data = array('upload_data' => $this->upload->data());
-				
-				$this->db->query($query);
 				$this->isSuccessful = 1;
 				$data['isSuccessful'] = $this->isSuccessful;
 				$this->load->view('addedPage/added_page', $data);
@@ -117,16 +80,6 @@
 		
 		public function addTheJournal()
 		{
-			$this->load->helper('url');
-		
-			$config['upload_path'] = 'journalimages/';
-			$config['file_name'] = $this->input->post('journal_title');
-			$config['remove_spaces'] = FALSE;
-			$config['allowed_types'] = 'gif|jpg|png|jpeg';
-			$config['max_size']    = '3000';
-			$config['max_width']  = '3000';
-			$config['max_height']  = '3000';
-			
 			$title = $this->input->post('journal_title');
 			$author = $this->input->post('journal_author');
 			$subject = $this->input->post('journal_subject');
@@ -137,16 +90,12 @@
 			$publicationdate = $this->input->post('journal_publication_date');
 			$numberofcopies = $this->input->post('journal_number_of_copies');
 			$volume = $this->input->post('journal_volume');
-			$series = $this->input->post('journal_series');
+			$description = $this->input->post('journal_description');
 			
-			//loads the necessary libraries
-			$this->load->database();
-			$this->load->library('upload', $config);
+			$this->load->model('addMaterial/addmaterial_model');	
+			$response = $this->addmaterial_model->addJournal($title, $author, $subject, $status, $type, $accountnumber, $callnumber, $publicationdate, $numberofcopies, $volume, $description);
 			
-			$sql = "SELECT AccountNumber, CallNumber FROM journal WHERE AccountNumber='".$accountnumber."' OR CallNumber='".$callnumber."'";
-			$query1 = $this->db->query($sql);
-				
-			if(!$this->upload->do_upload() || $query1->num_rows() != 0)
+			if($response == 0)
 			{
 				$this->isSuccessful = 0;
 				$data['isSuccessful'] = $this->isSuccessful;
@@ -154,11 +103,6 @@
 			}
 			else
 			{
-				$query = "INSERT INTO journal(Title,Author,Subject,Status,Type,AccountNumber,CallNumber,PublicationDate,NumberOfCopies,Volume,Series) VALUES ('$title','$author','$subject','$status','$type','$accountnumber','$callnumber','$publicationdate','$numberofcopies','$volume','$series')";
-					
-				$data = array('upload_data' => $this->upload->data());
-				
-				$this->db->query($query);
 				$this->isSuccessful = 1;
 				$data['isSuccessful'] = $this->isSuccessful;
 				$this->load->view('addedPage/added_page', $data);

@@ -26,6 +26,14 @@
 					}
 				);
 			});
+			
+			$(function() {
+				$('#addmaterial_button').click(
+					function() {
+						alert('halloo');
+					}
+				);
+			});
 		</script>
 	</head>
 	
@@ -66,15 +74,15 @@
 						
 						<tr>
 							<td><label for = "book_title">Title</label></td>
-							<td><input type = "text" id = "book_title" name = "book_title" required = "required" /></td>
+							<td><input type = "text" id = "book_title" name = "book_title" required = "required" pattern = "[ a-zA-Z0-9_ -]{5,70}" title = "must be alphanumeric in 5-70 characters" autofocus required"/></td>
 						</tr>
 						<tr>
 							<td><label for = "book_author">Author</label></td>
-							<td><input type = "text" id = "book_author" name = "book_author" required = "required" /></td>
+							<td><input type = "text" id = "book_author" name = "book_author" required = "required" required = "required" pattern = "[a-z A-Z]{5,50}" title = "must be alphanumeric in 5-50 characters" autofocus required"/></td>
 						</tr>
 						<tr>
 							<td><label for = "book_subject">Subject</label></td>
-							<td><input type = "text" id = "book_subject" name = "book_subject" required = "required" /></td>
+							<td><input type = "text" id = "book_subject" name = "book_subject" required = "required" pattern = "[a-z A-Z]{5,50}" title = "must be alphanumeric in 5-50 characters" autofocus required"/></td>
 						</tr>
 						<tr>
 							<td><label for = "book_status">Status</label></td>
@@ -116,7 +124,7 @@
 						</tr>
 						<tr>
 							<td><label for = "book_edition">Edition</label></td>
-							<td><input type = "number" id = "book_edition" name = "book_edition" required = "required" /></td>
+							<td><input type = "text" id = "book_edition" name = "book_edition" required = "required" /></td>
 						</tr>
 						<tr>
 							<td><label for = "book_publisher">Publisher</label></td>
@@ -129,13 +137,13 @@
 						<tr>
 							<td><label for = "book_description">Description</label></td>
 							<td>
-								<textarea rows="10" cols="50" placeholder="Describe yourself here..." id = "book_description" name = "book_description">
+								<textarea rows="10" cols="50" placeholder="Insert description..." id = "book_description" name = "book_description">
 									
 								</textarea>
 							</td>
 						</tr>
 					</table>
-					<input type = "submit" value = "ADD MATERIAL" />
+					<input type = "submit" value = "ADD MATERIAL" id = "addmaterial_button" name = "addmaterial_button" />
 				<?php echo form_close(); ?>
 			</div>
 		</div>

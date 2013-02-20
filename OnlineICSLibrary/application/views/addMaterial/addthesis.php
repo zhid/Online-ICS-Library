@@ -81,7 +81,7 @@
 							<td>
 								<select id = "thesis_status" name = "thesis_status">
 									<option value = "on loan">On Loan</option>
-									<option value = "on shelf">On Shelf</option>
+									<option selected="select" value = "on shelf">On Shelf</option>
 								</select>
 							</td>
 						</tr>

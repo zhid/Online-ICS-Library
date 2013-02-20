@@ -13,45 +13,14 @@
 		
 		public function validateLogin()
 		{
-			$this->load->database();
-			
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
 			$usertype = $this->input->post('usertype');
 			
-			if($usertype == "student")
-			{
-				$sql = "SELECT Username, Status FROM student WHERE Username='".$username."'";
-			}
-			else if($usertype == "faculty")
-			{
-				$sql = "SELECT Username, Status FROM faculty WHERE Username='".$username."'";
-			}
-			else if($usertype == "librarian")
-			{
-				$sql = "SELECT Username FROM librarian WHERE Username='".$username."'";
-			}
-			
-			$query = $this->db->query($sql);
-			$row = $query->row_array(); 
-			
-			if($query->num_rows() == 0 || $row['Status'] == 'Pending')
-			{
-				echo "fail";
-			}
-			else
-			{
-				$this->load->library('session');
-				$logindata = array(
-				   'username'  => $username,
-				   'password'  => $password,
-				   'usertype' => $usertype,
-				   'loggedin' => TRUE
-				);
-			  
-				$this->session->set_userdata($logindata);
-				echo "success";
-			}
+			$this->load->model('homePage/home_model');
+			$response =  $this->home_model->validateLogIn($username, $password, $usertype);
+				
+			echo $response;
 		}
 		
 		public function logout()
@@ -66,8 +35,10 @@
 		{
 			$this->load->library('session');
 		
-			if($this->session->userdata('loggedin') == TRUE && $this->session->userdata('usertype') == 'student')
+			if($this->session->userdata('loggedin') == TRUE && ($this->session->userdata('usertype') == 'student' || $this->session->userdata('usertype') == 'faculty'))
 			{
+				$this->load->helper('url');
+			
 				echo '<div id="user_account">
 						<div class="img_link_container">
 							<div class="img">
@@ -115,7 +86,7 @@
 							</div>
 							
 							<div class="lib_link">
-								<form action="http://localhost/OnlineICSLibrary/index.php/homePage/home/logout" method="POST">
+								<form action="'.base_url().'index.php/homePage/home/logout" method="POST">
 									<input type="submit" value="Logout"/>
 								</form>
 							</div>
@@ -124,6 +95,8 @@
 			}
 			else if($this->session->userdata('loggedin') == TRUE && $this->session->userdata('usertype') == 'librarian')
 			{
+				$this->load->helper('url');
+			
 				echo '<div id="lb_user_account">
 						<div class="lib_img_link_container">
 							<div class="lib_img">
@@ -131,7 +104,7 @@
 							</div>
 							
 							<div class="lib_link">
-								<a href="">Manage Library Users</a>
+								<a href="'.base_url().'index.php/manageUser/manageuser">Manage Library Users</a>
 							</div>
 						</div>
 						
@@ -151,7 +124,7 @@
 							</div>
 							
 							<div class="lib_link">
-								<a href="http://localhost/OnlineICSLibrary/index.php/addMaterial/addmaterial">Add Material</a>
+								<a href="'.base_url().'index.php/addMaterial/addmaterial">Add Material</a>
 							</div>
 						</div>
 						
@@ -161,7 +134,7 @@
 							</div>
 							
 							<div class="lib_link">
-								<a href="">Edit Material</a>
+								<a href="'.base_url().'index.php/editMaterial/editmaterial">Edit Material</a>
 							</div>
 						</div>
 						
@@ -171,7 +144,7 @@
 							</div>
 							
 							<div class="lib_link">
-								<a href="">Delete Material</a>
+								<a href="'.base_url().'index.php/deleteMaterial/deletematerial">Delete Material</a>
 							</div>
 						</div>
 						
@@ -181,7 +154,7 @@
 							</div>
 							
 							<div class="lib_link">
-								<form action="http://localhost/OnlineICSLibrary/index.php/homePage/home/logout" method="POST">
+								<form action="'.base_url().'index.php/homePage/home/logout" method="POST">
 									<input type="submit" value="Logout"/>
 								</form>
 							</div>

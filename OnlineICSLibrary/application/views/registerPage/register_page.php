@@ -29,7 +29,7 @@
 						var empNumRegEx = /^[0-9]{9,9}$/;
 						var employee_number =$('#employee_number').val();
 						
-						var nameRegEx = /^[a-zA-Z]{1,30}$/;
+						var nameRegEx = /^[a-zA-Z ]{1,30}$/;
 						var first_name = $('#first_name').val();
 						var middle_name = $('#middle_name').val();
 						var last_name = $('#last_name').val();
@@ -94,6 +94,7 @@
 								username: $("#username").val(),
 								password: $("#password").val(),
 								student_number: $("#student_number").val(),
+								employee_number: $("#employee_number").val(),
 								first_name: $("#first_name").val(),
 								middle_name: $("#middle_name").val(),
 								last_name: $("#last_name").val(),

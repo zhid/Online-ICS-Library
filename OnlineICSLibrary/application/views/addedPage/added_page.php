@@ -63,11 +63,11 @@
 				<?php
 					if($isSuccessful == 1)
 					{
-						echo'<img src="http://localhost/OnlineICSLibrary/images/success.png" width=300 height=300 alt="success"/>';
+						echo'<img src="'.base_url().'images/success.png" width=300 height=300 alt="success"/>';
 					}
 					else
 					{
-						echo'<img src="http://localhost/OnlineICSLibrary/images/fail.png" width=250 height=250 alt="success"/>';
+						echo'<img src="'.base_url().'images/fail.png" width=250 height=250 alt="success"/>';
 					}
 				?>
 			</div>

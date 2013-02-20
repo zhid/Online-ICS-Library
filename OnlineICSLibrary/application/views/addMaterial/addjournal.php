@@ -81,7 +81,7 @@
 							<td>
 								<select id = "journal_status" name = "journal_status">
 									<option value = "on loan">On Loan</option>
-									<option value = "on shelf">On Shelf</option>
+									<option selected="select" value = "on shelf">On Shelf</option>
 								</select>
 							</td>
 						</tr>
@@ -115,8 +115,11 @@
 							<td><input type = "text" id = "journal_volume" name = "journal_volume" required = "required" /> 
 						</tr>
 						<tr>
-							<td><label for = "journal_series">Series</label></td>
-							<td><input type = "number" id = "journal_series" name = "journal_series" required = "required" /></td>
+							<td><label for = "journal_description">Description</label></td>
+							<td>
+								<textarea rows="10" cols="50" placeholder="Insert description..." id = "journal_description" name = "journal_description">
+									
+								</textarea></td>
 						</tr>
 					</table>
 					<input type = "submit" value = "ADD MATERIAL" />

@@ -98,6 +98,18 @@ ul#navigation li a
 	text-align: center;
 }
 
+#manageuser_container
+{
+	text-align: center;
+	width: 900px;
+	height: 30px;
+}
+
+#manageuser_container select
+{
+	width: 150px;
+}
+
 #form_container
 {
 	float: left;
