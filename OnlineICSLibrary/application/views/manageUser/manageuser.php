@@ -3,6 +3,7 @@
 	<head>
 		<title>ONLINE ICS LIBRARY</title>
 		<meta charset = "utf-8" />
+		<link rel="shortcut icon" href="<?php $this->load->helper('url'); echo base_url();?>images/favicon.ico" >
 		<link rel = "stylesheet" type = "text/css" href = "<?php $this->load->helper('url'); echo base_url();?>stylesheet/addmaterial.css" />
 		<script src="<?php $this->load->helper('url'); echo base_url();?>javascript/jquery-1.9.0.js"></script>
 		<script src="<?php $this->load->helper('url'); echo base_url();?>javascript/jquery-1.9.0.min.js"></script>
@@ -20,7 +21,7 @@
 						usertype: $("#manageuser_select").val(),
 						is_ajax: 1
 					};
-					//$('#user_list').html("<img src='<?php $this->load->helper('url'); echo base_url();?>images/loader.gif'/>");
+					
 					$.ajax({
 						type: "POST",
 						url: action,
@@ -37,11 +38,11 @@
 		</script>
 	</head>
 	
-	<body>
+	<body>	
 		<div id="navigationBox">
 			<ul id="navigation">
 				<li id="home"><a href="<?php $this->load->helper('url'); echo base_url();?>"><span>Home</span></a></li>
-				<li id="gallery_page"><a href=""><span>Gallery Page</span></a></li>
+				<li id="gallery_page"><a href="<?php $this->load->helper('url'); echo base_url();?>index.php/galleryPage/gallery"><span>Gallery Page</span></a></li>
 				<li id="catalouge"><a href=""><span>Catalogue</span></a></li>
 				<li id="about"><a href=""><span>About the Library</span></a></li>
 				<li id="help"><a href=""><span>Help</span></a></li>

@@ -4,7 +4,7 @@
 		<title>ONLINE ICS LIBRARY</title>
 
 		<meta charset = "utf-8" />
-		
+		<link rel="shortcut icon" href="<?php $this->load->helper('url'); echo base_url();?>images/favicon.ico" >
 		<link rel="stylesheet" type="text/css" href="<?php $this->load->helper('url'); echo base_url();?>stylesheet/success_page.css"/>
 	</head>
 	

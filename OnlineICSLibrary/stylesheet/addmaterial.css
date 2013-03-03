@@ -65,6 +65,18 @@ ul#navigation li a
 	color: white;
 }
 
+#is_success
+{
+	background-color: green;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100%;
+	width: 100%;
+	z-index: 100;
+	position:absolute;
+	top: 80;
+}
+
 #container
 {
 	background-color: rgba(255, 255, 255, 0.2);
@@ -96,6 +108,15 @@ ul#navigation li a
 	width: 900px;
 	height: 30px;
 	text-align: center;
+}
+
+#user_list
+{
+	margin-top: 10px;
+	background-color: green;
+	height: auto;
+	width: auto;
+	padding-left: 220px;
 }
 
 #manageuser_container

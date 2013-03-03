@@ -48,8 +48,8 @@
 					WHERE CallNumber = '".$callNumber."' ";
 			
 			$this->db->query($sq1);
-			$this->load->view('editSuccessPage/editSuccess_page');
-		
+			//$this->load->view('editSuccessPage/editSuccess_page');
+			echo 'edited';
 		}
 		
 		public function edit_journal()
@@ -84,7 +84,8 @@
 					WHERE CallNumber = '".$callNumber."' ";
 			
 			$this->db->query($sq1);
-			$this->load->view('editSuccessPage/editSuccess_page');
+			//$this->load->view('editSuccessPage/editSuccess_page');
+			echo 'edited';
 		}
 		
 		/*THESIS*/
@@ -119,7 +120,8 @@
 					WHERE CallNumber = '".$callNumber."' ";
 			
 			$this->db->query($sq1);
-			$this->load->view('editSuccessPage/editSuccess_page');
+			//$this->load->view('editSuccessPage/editSuccess_page');
+			echo 'edited';
 		}
 		*/
 	}

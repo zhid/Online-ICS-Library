@@ -23,15 +23,21 @@
 			$query = $this->db->query($sql);
 			$row = $query->row_array();             
 
-			echo '<table border=1>';
-			echo '<tr>';
-			echo '<td>Title</td>';
-			echo '<td>Author</td>';
-			echo '<td>Account Number</td>';
-			echo '<td>Call Number</td>';
-			echo '<td>Delete Material</td>';
-			echo '';
-			echo '</tr>';
+			if($query->num_rows() > 0)
+			{
+				echo '<table>';
+				echo '<tr>';
+				echo '<td>Title</td>';
+				echo '<td>Author</td>';
+				echo '<td>Account Number</td>';
+				echo '<td>Call Number</td>';
+				echo '<td>Delete Material</td>';
+				echo '</tr>';
+			}
+			else
+			{
+				echo 'YOUR SEARCH KEYWORD DID NOT MATCH ANYTHING.';
+			}
          
          for($i=0; $i<$query->num_rows(); $i++)
         {
@@ -44,7 +50,7 @@
 				echo '<td>'.$row->Author.'</td>';
 				echo '<td>'.$row->AccountNumber.'</td>';
 				echo '<td>'.$row->CallNumber.'</td>';
-				echo '<td><form action="'.base_url().'index.php/deleteMaterial/deletemanager/deletefunc/'.$type.'/'.$row->AccountNumber.'" method="POST"><input type="submit" value ="DELETE"/></form></td>';
+				echo '<td><form action="'.base_url().'index.php/deleteMaterial/deletemanager/deletefunc/'.$type.'/'.$row->Title.'/'.$row->AccountNumber.'" method="POST"><input type="submit" class="deletematerial_button" value ="DELETE"/></form></td>';
 				echo '</tr>';
 			}
 			else
@@ -54,11 +60,10 @@
 				echo '<td>'.$row->Author.'</td>';
 				echo '<td>'.$row->AccountNumber.'</td>';
 				echo '<td>'.$row->CallNumber.'</td>';
-				echo '<td><form action="'.base_url().'index.php/deleteMaterial/deletemager/deletefunc/'.$type.'/'.$row->AccountNumber.'" method="POST"><input type="submit" value ="DELETE"/></form></td>';
+				echo '<td><form action="'.base_url().'index.php/deleteMaterial/deletemager/deletefunc/'.$type.'/'.$row->Title.'/'.$row->AccountNumber.'" method="POST"><input type="submit" class="deletematerial_button" value ="DELETE"/></form></td>';
 				echo '</tr>';
-             }
-               $row=$query->next_row();
-               echo '<br/>';
+			}
+			$row=$query->next_row();
         }
         
         echo '</table>'; 

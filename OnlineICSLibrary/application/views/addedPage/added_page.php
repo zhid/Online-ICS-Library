@@ -4,7 +4,7 @@
 		<title>ONLINE ICS LIBRARY</title>
 
 		<meta charset = "utf-8" />
-		
+		<link rel="shortcut icon" href="<?php $this->load->helper('url'); echo base_url();?>images/favicon.ico" >
 		<link rel="stylesheet" type="text/css" href="<?php $this->load->helper('url'); echo base_url();?>stylesheet/success_page.css"/>
 		
 		<script src="<?php $this->load->helper('url'); echo base_url();?>javascript/jquery-1.9.0.js"></script>
@@ -41,7 +41,7 @@
 	<body>
 		<div id = "container">
 			<div id = "message">
-				<form action = "<?php $this->load->helper('url'); echo base_url();?>index.php/addMaterial/addmaterial/addlink/book" method = "POST">
+				<form action = "<?php $this->load->helper('url'); echo base_url();?>index.php/myLibrary/mylibrary/addbook_link" method = "POST">
 					<?php
 						if($isSuccessful == 1)
 						{
@@ -63,11 +63,11 @@
 				<?php
 					if($isSuccessful == 1)
 					{
-						echo'<img src="'.base_url().'images/success.png" width=300 height=300 alt="success"/>';
+						echo'<img src="'.base_url().'images/success-icon.png" width=300 height=300 alt="success"/>';
 					}
 					else
 					{
-						echo'<img src="'.base_url().'images/fail.png" width=250 height=250 alt="success"/>';
+						echo'<img src="'.base_url().'images/fail-icon.png" width=250 height=250 alt="success"/>';
 					}
 				?>
 			</div>

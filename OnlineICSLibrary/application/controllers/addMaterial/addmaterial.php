@@ -33,7 +33,7 @@
 			$this->load->model('addMaterial/addmaterial_model');
 			$response = $this->addmaterial_model->addBook($title, $author, $subject, $status, $type, $accountnumber, $callnumber, $publicationdate, $numberofcopies, $isbn, $edition, $publisher, $description, $numberofpages); 
 		
-			if($response == 0)
+			if($response == 'failed')
 			{
 				$this->isSuccessful = 0;
 				$data['isSuccessful'] = $this->isSuccessful;
@@ -62,9 +62,9 @@
 			
 			
 			$this->load->model('addMaterial/addmaterial_model');	
-			$response = $this->addmaterial_model->addThesis($title, $author, $subject, $status, $type, $accountnumber, $callnumber, $publicationdate, $numberofcopies, $thesisadviser);
+			$response = $this->addmaterial_model->addJournal($title, $author, $subject, $status, $type, $accountnumber, $callnumber, $publicationdate, $numberofcopies, $thesisadviser);
 			
-			if($response == 0)
+			if($response == 'failed')
 			{
 				$this->isSuccessful = 0;
 				$data['isSuccessful'] = $this->isSuccessful;
@@ -93,9 +93,9 @@
 			$description = $this->input->post('journal_description');
 			
 			$this->load->model('addMaterial/addmaterial_model');	
-			$response = $this->addmaterial_model->addJournal($title, $author, $subject, $status, $type, $accountnumber, $callnumber, $publicationdate, $numberofcopies, $volume, $description);
+			$response = $this->addmaterial_model->addThesis($title, $author, $subject, $status, $type, $accountnumber, $callnumber, $publicationdate, $numberofcopies, $volume, $description);
 			
-			if($response == 0)
+			if($response == 'failed')
 			{
 				$this->isSuccessful = 0;
 				$data['isSuccessful'] = $this->isSuccessful;

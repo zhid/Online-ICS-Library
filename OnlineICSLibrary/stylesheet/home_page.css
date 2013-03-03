@@ -3,11 +3,72 @@ body
 	background-image: url('../images/body_background.jpg');
 }
 
+@font-face
+{
+	font-family: Font1;
+	src: url('../fonts/scribble_box.ttf');
+}
+
+#user_processing
+{
+	position:fixed;
+	height: 180px;
+	width: 180px;
+	top: 240px;
+    left: 43%;
+    right: 43%;
+	z-index:120;
+}
+
+#success_box
+{
+	box-shadow: 0 0 7px 0px #000 inset, 0 0 16px 0px #000;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	background-color: rgba(240, 183, 43, 0.5);
+	height: 300px;
+	width: 800px;
+	position: fixed;
+	z-index: 120;
+	top: 180px;
+    left: 20%;
+    right: 20%;
+}
+
+#success_message
+{
+	text-align: center;
+	padding-top: 30px;
+	float: left;
+	height: 270px;
+	width: 500px;
+}
+
+#success_image
+{
+	float: left;
+	height: 300px;
+	width: 300px;
+}
+
+#overlay
+{
+	background-color: rgba(10, 10, 10, 0.9);
+	position:fixed;
+	top:0px;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	z-index:110;
+}
+
 #navigationBox
 {
 	margin-left: auto;
 	margin-right: auto;
-	height: 60px;
+	height: 50px;
 	width: 900px;
 	background-color:#4c4c4c;
 	border-top-left-radius: 10px;
@@ -15,6 +76,89 @@ body
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 	box-shadow: 0 0 20px 0px #000 inset, 0 0 16px 0px #000;
+}
+
+#gallery_container
+{
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	background-color: rgba(241, 238, 231, 0.3);
+	padding-top: 10px;
+	min-height: 500px;
+	height: auto;
+	width: 900px;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#gallery_header
+{
+	margin-left: auto;
+	margin-right: auto;
+	height: 50px;
+	width: 875px;
+}
+
+#gallery_elements
+{
+	margin-top: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	min-height: 420px;
+	height: auto;
+	width: 875px;
+}
+
+#header_text
+{
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	height: 20px;
+	width: 875;
+}
+
+#header_control
+{
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	height: 20px;
+	width: 875;
+}
+
+.material_container
+{
+	background-color: rgba(241, 238, 231, 0.5);
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	float: left;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	margin-right: 11px;
+	margin-bottom: 11px;
+	height: 260px;
+	width: 270px;
+}
+
+.material_image
+{
+	float: left;
+	height: 180px;
+	width: 100px;
+}
+
+.material_info
+{
+	float: left;
+	height: 260px;
+	width: 160px;
 }
 
 ul#navigation
@@ -25,11 +169,11 @@ ul#navigation
 
 ul#navigation li
 {
-	padding-top: 10px;
 	list-style: none;
+	padding-top: 7px;
 	float: left;
 	width: 180px;
-	height: 50px;
+	height: 43px;
 }
 
 li#home:hover
@@ -64,6 +208,36 @@ ul#navigation li a
 	color: white;
 }
 
+#logo_header
+{
+	width: 900px;
+	height: 100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+span#header_title
+{
+	font-family: Font1;
+	color: white;
+	font-size: 30px;
+	letter-spacing: 5px;
+	text-shadow:5px 5px 10px white;
+}
+
+#left_header
+{
+	margin-top: 50px;
+	float: right;
+	width: 140px;
+	height: 60px;
+}
+
+#left_header img
+{
+	cursor: pointer;
+}
+
 #container 
 {
 	background-color: rgba(255, 255, 255, 0.4);
@@ -73,7 +247,7 @@ ul#navigation li a
 	margin-left: auto;
 	margin-right: auto;
 	position:relative;
-	z-index:0;
+	z-index: 100;
 	box-shadow: 0 0 7px 0px #000 inset, 0 0 16px 0px #000;
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;
@@ -165,125 +339,202 @@ ul#navigation li a
 	background-position:0 -12px;
 }
 
-#FirstContainer
-{
-	margin-top: 20px;
-	margin-left: auto;
-	margin-right: auto;
-	width: 900px;
-	height:280px;
-}
+/*Log in and Sign Up*/
 
-#catalog
+#form_externalcontainer
 {
-	background-color: rgba(240, 183, 43, 0.5);
 	box-shadow: 0 0 7px 0px #000 inset, 0 0 16px 0px #000;
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
-	width:300px;
-	height:280px;
-	float:left;
+	background-color: rgba(240, 183, 43, 0.5);
+	color: white;
+	width: 720px;
+	height: 620px;
+	position: fixed;
+	z-index: 120;
+	top: 25px;
+    left: 23%;
+    right: 23%;
 }
-#account_picture
+
+#container_header
 {
 	float: left;
-	margin-top: 10px;
-	margin-left: 15px;
-	width: 30px;
+	height: 50px;
+	width: 680px;
+	text-align: center;
+}
+
+#registration_comment
+{
+	text-align: center;
+	font-weight: bold;
+	float: left;
+	width: 720px;
 	height: 30px;
+}
+
+#form_container h4
+{
+	color: white;
+}
+
+#form_container
+{
+	float: left;
+	padding-left: 20px;
+	height: 520px;
+	width: 500px;
+}
+
+#form_container input[type="text"], #form_container input[type="password"], #form_container input[type="email"]
+{
+	font-size: 20px;
+}
+
+#form_container label
+{
+	color: white;
+}
+
+#form_container label, #form_container input[type="submit"]
+{
+	font-size: 18px;
+}
+
+#form_container select
+{
+	font-size: 18px;
+}
+
+#rightOfForm
+{
+	float: left;
+	padding-top: 50px;
+	height: 470px;
+	width: 200px;
+}
+
+#catalog
+{
+	box-shadow: 0 0 7px 0px #000 inset, 0 0 16px 0px #000;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	background-color: rgba(240, 183, 43, 0.5);
+	width: 600px;
+	height: 300px;
+	float: left;
+	position: fixed;
+	z-index: 120;
+	top: 200px;
+    left: 27%;
+    right: 27%;
 }
 
 #catalog_header
 {
+	
 	float: left;
 	margin-top: 10px;
 	padding-top: 5px;
-	width: 250px;
+	width: 560px;
 	height: 30px;
 	font-size: 20px;
 	text-align:center;
 	color: white;
 }
 
+#cancel1
+{
+	
+	float: left;
+	margin-top: 10px;
+	padding-right: 10px;
+	width: 30px;
+	height: 35px;
+}
+
+#cancel2
+{
+	float: left;
+	margin-top: 10px;
+	padding-right: 10px;
+	width: 30px;
+	height: 35px;
+}
+
+#cancel1 img, #cancel2 img
+{
+	cursor: pointer;
+}
+
 #login_comment
 {
-	font-size: 15px;
+	font-size: 18px;
 	text-align: center;
 	padding-top: 0px;
 	float: left;
 	font-weight: bold;
 	height: 20px;
-	width: 300px;
+	width: 600px;
 }
 
-#accountbox_form
+#account_picture
 {
 	float: left;
-	height: 100px;
-	width: 300px;
-}
-
-#accountbox_form select
-{
-	margin-left: 3px;
-	width: 175px;
-	height: 25px;
-}
-
-#submit_button input[type="submit"]
-{
-	width: 70px;
-	height: 80px;
+	padding-left: 15px;
+	margin-left: 50px;
+	width: 190px;
+	height: 200px;
 }
 
 #account_box
 {
 	float: left;
-	height: 100px;
-	width: 300px;
+	height: 200px;
+	width: 250px;
 }
 
-#form_input
+#account_box input[type="text"], #account_box input[type="password"]
 {
-	float: left;
-	margin-left: 10px;
-	width: 210px;
-	height: 100px;
+	font-size: 20px;
 }
 
-#submit_button
+#account_box select
 {
-	float: left;
-	width: 70px;
-	height: 100px;
+	font-size: 18px;
 }
 
 #not_member
 {
-	padding: 10px;
+	cursor: pointer;
 	float: left;
 	height: 20px;
-	width: 290px;
+	width: 395px;
 }
 
 #account_box span
 {
 	color: white;
-	font-size: 17px;
+	font-size: 20px;
 }
 
 #account_box a
 {
 	color: white;
-	font-size: 17px;
+	font-size: 20px;
 }
 
 #account_box input
 {
 	font-size: 17px;
 }
+
+/*Log in and Sign Up*/
 
 input, select
 {
@@ -369,7 +620,6 @@ input, select
 	border-bottom-left-radius: 10px;
 	width:280px;
 	height:280px;
-	margin-left:20px;
 	float:left;
 }
 
@@ -393,7 +643,6 @@ input, select
 	color: white;
 	padding-left: 20px;
 	padding-right: 20px;
-	padding-top: 20px;
 	text-align: justify;
 }
 
@@ -437,11 +686,11 @@ input, select
 
 #SecondContainer
 {
+	float: left;
 	margin-top: 20px;
-	margin-left: auto;
-	margin-right: auto;
-	width: 900px;
-	height:280px;
+	margin-left: 20px;
+	width: 580px;
+	height: 580px
 }
 
 #calendar
@@ -452,14 +701,15 @@ input, select
 	border-top-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
-	width:440px;
+	margin-top: 20px;
+	width: 580px;
 	height:280px;
 	float:left;
 }
 
 #calendar_title
 {
-	width: 440px;
+	width: 580px;
 	height: 20px;
 	float: left;
 	padding-top: 10px;
@@ -470,7 +720,7 @@ input, select
 #calendar_content
 {
 	float: left;
-	width: 400px;
+	width: 540px;
 	height: 230px;
 	font-size: 15px;
 	color: white;
@@ -478,6 +728,14 @@ input, select
 	padding-right: 20px;
 	padding-top: 20px;
 	text-align: justify;
+}
+
+#outer_container
+{
+	height: 600px;
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #latest
@@ -488,15 +746,15 @@ input, select
 	border-top-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
-	width:440px;
-	height:280px;
-	margin-left:20px;
+	width:300px;
+	height: 580px;
 	float:left;
+	margin-top: 20px;
 }
 
 #latest_title
 {
-	width: 440px;
+	width:300px;
 	height: 20px;
 	float: left;
 	padding-top: 10px;
@@ -507,7 +765,7 @@ input, select
 #latest_content
 {
 	float: left;
-	width: 400px;
+	width:260px;
 	height: 230px;
 	font-size: 15px;
 	color: white;

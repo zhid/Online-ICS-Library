@@ -1,0 +1,178 @@
+#mylibrary_box
+{
+	background-color: rgba(148, 143, 142, 0.3);
+	box-shadow: 0 0 7px 0px #000 inset, 0 0 16px 0px #000;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	min-height: 600px;
+	height: auto;
+	width: 900px;
+}
+
+#mylibrary_control
+{
+	background-color: rgba(255, 255, 255, 0.3);
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	float: left;
+	min-height: 200px;
+	height: auto;
+	width: 260px;
+}
+
+#mylibrary_content
+{
+	float: left;
+	height: 600px;
+	width: 640px;
+}
+
+.img_link_container
+{
+	height: 30px;
+	width: 260px;
+	margin-top: 10px;
+}
+
+.img_link_container a
+{
+	text-decoration: none;
+	color: white;
+	font-size: 18px;
+}
+
+#mylibrary_content_header
+{
+	color: white;
+	font-size: 20px;
+	text-align: center;
+	height: 30px;
+	width: 640px;
+}
+
+#manageuser_container
+{
+	text-align: center;
+	height: 30px;
+	width: 640px;
+}
+
+#manageuser_container select
+{
+	font-size: 16px;
+}
+
+#user_list
+{
+	color: white;
+	font-weight: bold;
+	padding-top: 10px;
+	padding-left: 30px;
+	min-height: 530px;
+	height: auto;
+	width: 610px;
+	text-align: center;
+}
+
+td
+{
+	font-size: 16px;
+	color: white;
+	padding: 3px;
+}
+
+#add_form
+{
+	min-height: 540px;
+	height: auto;
+	width: 640px;
+}
+
+#add_form label
+{
+	font-size: 18px;
+}
+
+#add_form input
+{
+	font-size: 16px;
+}
+select{
+	border-radius:5px;
+}
+input{
+	border-radius:5px;
+}
+/*TABS*/
+.tab{
+	padding:10px;
+	width:600px;
+	background-color:rgba(255, 255, 255, 0.8);
+	border-radius:5px;
+	margin-left:10px;
+	height:200px;
+	box-shadow:0 0 7px 0px #000, 0 0 16px 0px #000;
+}
+.tabs li {
+	list-style:none;
+	display:inline;
+}
+
+ul.tabs{
+	margin-bottom:0px;
+}
+b.tabname{
+	font-size:20px;
+}
+.tabs a {
+	box-shadow: 0px -10px 10px -10px black;
+	padding:5px;
+	height:25px;
+	display:inline-block;
+	background-color:rgba(148, 143, 142, 0.8);
+	color:#fff;
+	text-decoration:none;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.tabs a.active {
+	background-color:rgba(255, 255, 255, 0.8);
+	color:#000;
+}
+
+b.title{
+	color:grey;
+}
+/*TABS*/
+#materials_searched
+{
+	min-height: 320px;
+	height: auto;
+	padding-left: 15px;
+	width: 615px;
+}
+
+/*viewpage start*/
+#materialImage{
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 10px;
+	float: left;
+	min-height: 200px;
+	height: 600px;
+	width: 260px;
+}
+
+#materialData{
+	background-color: rgba(255, 255, 255, 0.7);
+	float: left;
+	height: 600px;
+	width: 640px;
+}
